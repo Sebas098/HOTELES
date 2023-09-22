@@ -1,26 +1,6 @@
-//Importando la Herramienta
-const express = require('express')
-const app = express()
+import { Api } from "./Api.js";
 
-//atendiendo peticiones
-app.post('/api/habitaciones', function (req, res) {
-  res.send('Estoy guardando una habitacion')
-})
-app.get('/api/habitaciones', function (req, res) {
-    res.send('Estoy buscando las habitaciones')
-  })
-  app.get('/api/habitaciones', function (req, res) {
-    res.send('Estoy buscando una habitacion')
-  })
-  app.put('/api/habitaciones', function (req, res) {
-    res.send('Estoy modificando una habitacion')
-  })
-  app.delete('/api/habitaciones', function (req, res) {
-    res.send('Estoy eliminando una Habitacion')
-  })
-    
+let servidor=new Api(); //creando un objeto de la clase Api
 
-//levantando un servidor
-app.listen(3000,function(){
-    console.log("Servidor operando")
-})
+//levantamos el servidor
+servidor.levantarServidor()
